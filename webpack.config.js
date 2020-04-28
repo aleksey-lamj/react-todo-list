@@ -25,9 +25,7 @@ module.exports = {
     devServer: {
         contentBase: PATHS.dist,
         overlay: true,
-        historyApiFallback: true,
-        host: '192.168.1.193',
-        port: 4200
+        historyApiFallback: true
     },
     plugins: [
         new MiniCssExtractPlugin({
@@ -68,8 +66,7 @@ module.exports = {
                     {
                         loader: 'css-loader',
                         options: {
-                            sourceMap: true,
-                            url: false
+                            sourceMap: true
                         }
                     },
                     {
