@@ -9,7 +9,7 @@ import InfoNotes from '../infoNotes/infoNotes'
 
 
 const App = () => {
-  const [form, setForm] = useState('info')
+  const [form, setForm] = useState('')
   const { add } = useContext(Context)
   const filterForm = () => form === 'search' ? <Search />
                                              : <AddNote fn={add} plch='Добавить задачу' />
