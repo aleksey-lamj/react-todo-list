@@ -1,0 +1,224 @@
+@import url("https://fonts.googleapis.com/css2?family=Open+Sans&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Open Sans", sans-serif;
+}
+button {
+  cursor: pointer;
+  background: transparent;
+  border: none;
+}
+svg {
+  width: 20px;
+  height: 20px;
+  transition: fill 300ms;
+}
+.svg-wrap {
+  display: block;
+  margin: 0 auto;
+  width: 160px;
+  height: 160px;
+  .progress-circle {
+    stroke-dashoffset: -325;
+  }
+}
+.info-wrapper {
+  margin: 15px 0;
+  .info {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    font-size: 25px;
+  }
+  .progress-wrap {
+    position: relative;
+    .progress {
+      position: absolute;
+      font-size: 40px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+}
+.container {
+  width: 100%;
+  max-width: 600px;
+  margin: 50px auto;
+  @media screen and(max-width: 768px) {
+    padding: 10px;
+  }
+}
+form {
+  position: relative;
+  display: flex;
+  input {
+    padding: 20px 60px 20px 20px;
+    font-size: 20px;
+    &[type="text"] {
+      flex-grow: 1;
+    }
+  }
+  .send {
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    transform: translate(0, -50%);
+    outline: none;
+    svg {
+      width: 30px;
+      height: 30px;
+    }
+  }
+}
+.todo-menu {
+  display: flex;
+  justify-content: space-between;
+  button {
+    margin: 10px;
+    flex-grow: 1;
+    svg {
+      width: 35px;
+      height: 35px;
+      @media screen and(max-width: 480px) {
+        width: 30px;
+        height: 30px;
+      }
+    }
+  }
+}
+.list-wrapper {
+  .alert {
+    display: block;
+    margin: 10px 0;
+    text-align: center;
+    font-size: 22px;
+  }
+  ul {
+    list-style-type: none;
+    li {
+      display: flex;
+      align-items: center;
+      margin: 10px 0;
+      font-size: 20px;
+      padding: 15px;
+      border: 1px solid lightgrey;
+      border-radius: 5px;
+      transition: border 100ms;
+      &.settings {
+        border: 1px solid #e67e22;
+      }
+      .important,
+      .done,
+      .dots-menu {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        cursor: pointer;
+      }
+      .important svg,
+      .dots-menu svg {
+        fill: transparent;
+        stroke-width: 3.3%;
+      }
+      .important {
+        margin: 0 20px 0 0;
+        svg {
+          stroke: #f1c40f;
+        }
+        &.active svg {
+          fill: #f1c40f;
+        }
+      }
+      .note-value {
+        flex-grow: 1;
+        @media screen and(max-width: 480px) {
+          font-size: 16px;
+        }
+        span {
+          transition: color 100ms;
+          &.note-done {
+            color: #bdc3c7;
+            text-decoration: line-through;
+          }
+        }
+      }
+      .done {
+        margin: 0 10px 0 0;
+        border: 1px solid #95a5a6;
+        svg {
+          fill: transparent;
+        }
+        &.active svg {
+          fill: #2ecc71;
+        }
+      }
+      .clock {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        .date {
+          font-size: 10px;
+        }
+        .time {
+          font-size: 18px;
+        }
+      }
+      .dots-menu {
+        svg {
+          width: 30px;
+          height: 32px;
+          stroke: #000;
+          @media screen and(max-width: 480px) {
+            width: 25px;
+            height: 27px;
+          }
+          &:hover {
+            fill: #000;
+          }
+        }
+        &.active svg {
+          fill: #000;
+        }
+      }
+      .settings {
+        flex-grow: 1;
+        &-btn {
+          width: 35px;
+          height: 35px;
+          margin: 5px 10px;
+          border: 1px solid #7f8c8d;
+          transition: background 300ms;
+          @media screen and(max-width: 480px) {
+            width: 25px;
+            height: 25px;
+            svg {
+              width: 15px;
+              height: 15px;
+            }
+          }
+          &:hover {
+            background: #7f8c8d;
+            svg {
+              fill: #fff;
+            }
+          }
+        }
+        form {
+          width: 98%;
+          input {
+            padding: 10px 55px 10px 10px;
+          }
+          .send svg {
+            width: 20px;
+            height: 20px;
+          }
+        }
+      }
+    }
+  }
+}
