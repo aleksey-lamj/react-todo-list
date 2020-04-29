@@ -4,16 +4,16 @@ import { Context } from '../../context/context'
 
 const InfoNotes = () => {
 
-  const [canvas, setCanvas] = useState()
+  const [svg, setSvg] = useState()
   const [options, setOptions] = useState()
   const [anim, setAnim] = useState(0)
   const { list } = useContext(Context)
   useEffect(() => {
-    if (canvas) {
+    if (svg) {
       const listLength = list.length
       const doneLength = list.filter(el => el.done).length
       setOptions({
-        totalLength: canvas.getTotalLength(),
+        totalLength: svg.getTotalLength(),
         all: listLength,
         done: doneLength,
         important: list.filter(el => el.important).length
@@ -24,7 +24,7 @@ const InfoNotes = () => {
         }, 500 * i / 35);
       }
     }
-  }, [canvas, list])
+  }, [svg, list])
 
   return (
     <div className='info-wrapper'>
@@ -35,7 +35,7 @@ const InfoNotes = () => {
       </div>
       <div className="progress-wrap">
       <span className="progress">{options ? anim + '%' : '0%'}</span>
-      <Circle fn={el => setCanvas(el.current)} opt={options} />
+      <Circle fn={el => setSvg(el.current)} opt={options} />
       </div>
     </div>
   )
