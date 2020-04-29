@@ -29,9 +29,9 @@ const InfoNotes = () => {
   return (
     <div className='info-wrapper'>
       <div className='info'>
-        <span>Всего задач {options ? options.all : null}</span>
-        <span>Выполненных {options ? options.done : null}</span>
-        <span>Важных      {options ? options.important : null}</span>
+        <span>Всего задач {options && options.all}</span>
+        <span>Выполненных {options && options.done}</span>
+        <span>Важных      {options && options.important}</span>
       </div>
       <div className="progress-wrap">
       <span className="progress">{options ? anim + '%' : '0%'}</span>
