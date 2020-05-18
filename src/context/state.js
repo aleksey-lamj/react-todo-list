@@ -27,10 +27,7 @@ const TodoState = ({ children }) => {
       }
     ]
   }
-  const localState = JSON.parse(localStorage.getItem('list'))
-  if (localState) {
-    initialState.list = localState
-  }
+  
   const [state, dispatch] = useReducer(reducer, initialState)
   const add = (value) => {
     const note = {

@@ -38,7 +38,6 @@ const Notes = ({ filter }) => {
         arr = list.slice()
         break;
     }
-    localStorage.setItem('list', JSON.stringify(list))
     if (!arr.length) return <span className="alert">По вашему запросу ничего не найдено</span>
 
 
