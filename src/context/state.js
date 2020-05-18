@@ -20,7 +20,7 @@ const TodoState = ({ children }) => {
         done: false
       },
       {
-        id: 1587912272074,
+        id: 1587912272073,
         value: 'Сходить в магазин',
         important: true,
         done: false

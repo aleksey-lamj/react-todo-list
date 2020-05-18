@@ -6,7 +6,8 @@ const AddNote = ({ fn, val = '', plch = '', clear = false, autoFcs = false }) =>
 
   const sumbitHandler = e => {
     e.preventDefault()
-    if (!!value) {
+    if (!!value.trim()) {
+      console.log('va', value)
       if (!clear) {
         setValue('')
       }

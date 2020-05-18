@@ -68,7 +68,9 @@ const Circle = ({ fn, opt }) => {
     <svg width='160' height='160' viewBox='0 0 160 160' className='svg-wrap' >
       <circle cx='80' cy='80' r='70' strokeWidth='5' stroke='#bdc3c7' fill="transparent" strokeOpacity='0.3'  />
 
-      <circle className='progress-circle' ref={ctx} cx='80' cy='80' r='70' strokeWidth='5' stroke='#26de81' fill="transparent" strokeDasharray={style ? `${String(style.line)} ${String(style.rest)}` : '0 420'} />
+      <circle className='progress-circle' ref={ctx} cx='80' cy='80' r='70' strokeWidth='5' stroke='#26de81' fill="transparent"
+      strokeLinecap={'round'} 
+      strokeDasharray={style ? `${String(style.line)} ${String(style.rest)}` : '0 420'} />
     </svg>
   )
 }
